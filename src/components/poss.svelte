@@ -22,7 +22,7 @@
             <!-- Image -->
             <div class="d-flex justify-content-center my-3">
             
-                <img src={chImage} height="500px" alt="CH Image">
+                <img src={chImage} height="500px" alt="Checkout Counter">
             </div>
 
             <!-- Check In Button -->

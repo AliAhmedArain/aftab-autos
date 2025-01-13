@@ -1,7 +1,7 @@
-<div class="container-fluid p-0 custom-bg-c">
+<div class="container-fluid p-0 ">
     <div class="d-none d-lg-flex">
         <!-- Sidebar -->
-        <div class="custom-bg-c" style="width: 250px; height: 100%; overflow-y: auto;">
+        <div class="custom-bg-c vh-100" style="width: 250px">
                 <!-- Logo and Title -->
                 <h4 class="d-flex mt-4 ml-3">
                     <span class="me-2"></span> HOME
@@ -13,7 +13,7 @@
                     <li class="nav-item mb-2 border-bottom">
                         <a class="nav-link text-dark d-flex justify-content-between align-items-center"
                            data-bs-toggle="collapse" href="#menu-dashboards">
-                            <span><i class="bi bi-clipboard-data-fill mr-2"></i>Dashboard</span>
+                            <span><i class="bi bi-clipboard-data-fill "></i>Dashboard</span>
                         </a>
                     </li>
 

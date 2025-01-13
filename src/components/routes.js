@@ -47,9 +47,6 @@ import Addpurchasereturn from './addpurchase return.svelte';
 
 
 
-
-
-
 export const routes = {
   '/quotation': Quotation, 
   '/stock-movement': Stockmovement,

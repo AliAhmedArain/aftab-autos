@@ -83,7 +83,7 @@
                     <input type="number" class="form-control" value="0" readonly>
                 </td>
                 <td>
-                    <button class="btn btn-outline-secondary btn-sm">
+                    <button class="btn btn-outline-secondary btn-sm" aria-label="Confirm">
                         <i class="bi bi-check-lg"></i>
                     </button>
                 </td>
@@ -120,9 +120,9 @@
 
     <!-- Attachments -->
     <div class="mt-3">
-        <label class="form-label">Attachments</label>
+        <label for="attachments" class="form-label">Attachments</label>
         <div class="border p-3">
-            <input type="file" class="form-control mb-2">
+            <input type="file" id="attachments" class="form-control mb-2">
             <button class="btn btn-primary">Browse Files</button>
         </div>
     </div>
