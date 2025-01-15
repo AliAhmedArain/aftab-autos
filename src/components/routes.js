@@ -41,6 +41,7 @@ import Addstockmovement from './addstockmovement.svelte';
 import Addcheckoutcounter from './addcheckoutcounter.svelte';
 import Addpurchaserefund from './addpurchaserefund.svelte';
 import Addpurchasereturn from './addpurchase return.svelte';
+// import app from '../main';
 
 
 
@@ -92,5 +93,6 @@ export const routes = {
 '/addcheckoutcounter':Addcheckoutcounter,
 '/addpurchaserefund':Addpurchaserefund,
 '/addpurchasereturn':Addpurchasereturn,
+// '/app':app,
 
 };
