@@ -1,3 +1,50 @@
+<script>
+    import {onMount} from "svelte";
+    import DataTable from "datatables.net-bs5"; // Import DataTables with Bootstrap 5 integration
+    import "datatables.net-bs5/css/dataTables.bootstrap5.min.css"; // Include the CSS
+
+    let table;
+
+    onMount(() => {
+        // Initialize DataTable
+        const dataTable = new DataTable(table, {
+            paging: true,
+            searching: true,
+            ordering: true,
+            pageLength: 5,
+            language: {
+                search: "Filter:"
+            },
+            initComplete : function () {
+                table
+                    .columns()
+                    .every(function () {
+                        let column = this;
+                        let title = column.footer().textContent;
+
+                        // Create input element
+                        let input = document.createElement('input');
+                        input.placeholder = title;
+                        column.footer().replaceChildren(input);
+
+                        // Event listener for user input
+                        input.addEventListener('keyup', () => {
+                            if (column.search() !== this.value) {
+                                column.search(input.value).draw();
+                            }
+                        });
+                    });
+            }
+
+        });
+
+        // Clean up DataTable on component unmount
+        return () => {
+            dataTable.destroy();
+        };
+    });
+</script>
+
 <div class="container-fluid p-0 vh-100 ">
     <div class="p- border-bottom">
         <div class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-3 pt-3">
@@ -13,158 +60,35 @@
             </div>
         </div>
     </div>
-    <table class="table table-striped table-hover mt-3 ">
-        <thead class="table-light">
+    <table bind:this={table} class="table table-striped table-hover mt-3 ">
+        <thead>
         <tr>
-            <!--            <th><input type="checkbox" checked></th>-->
-            <th>Code</th>
+            <th>#</th>
             <th>Name</th>
-            <th>Category</th>
-            <th>Contact Person</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Action</th>
+            <th>Age</th>
+            <th>City</th>
         </tr>
         </thead>
         <tbody>
         <tr>
-
-            <td><img src="https://via.placeholder.com/32" class="rounded-circle me-2" alt="User"><a href="#" class="text-decoration-none">C-100020</a></td>
-            <td>M</td>
-            <td></td>
-            <td>H</td>
-            <td></td>
-            <td>0</td>
-            <td>
-                <a href="#"><i class="bi bi-file-earmark-ruled"></i></a>
-                <a href="#"><i class="bi bi-trash3-fill "></i></a>
-            </td>
+            <td>1</td>
+            <td>John Doe</td>
+            <td>30</td>
+            <td>New York</td>
         </tr>
         <tr>
-            <td><img src="https://via.placeholder.com/32" class="rounded-circle me-2 " alt="User">
-                <a href="#" class="text-decoration-none">C-100020</a></td>
-            <td>Munawar</td>
-            <td>Banda</td>
-            <td>033292339</td>
-            <td>jkdaj@gmail.com</td>
-            <td></td>
-            <td>
-                <a href="#"><i class="bi bi-file-earmark-ruled"></i></a>
-                <a href="#"><i class="bi bi-trash3-fill "></i></a>
-            </td>
+            <td>2</td>
+            <td>Jane Smith</td>
+            <td>25</td>
+            <td>Los Angeles</td>
         </tr>
         <tr>
-            <td><img src="https://via.placeholder.com/32" class="rounded-circle me-2" alt="User"><a href="#" class="text-decoration-none">C-100020</a></td>
-            <td>M</td>
-            <td></td>
-            <td>H</td>
-            <td></td>
-            <td>0</td>
-            <td>
-                <a href="#"><i class="bi bi-file-earmark-ruled"></i></a>
-                <a href="#"><i class="bi bi-trash3-fill "></i></a>
-            </td>
+            <td>3</td>
+            <td>Robert Brown</td>
+            <td>28</td>
+            <td>Chicago</td>
         </tr>
-        <tr>
-            <td><img src="https://via.placeholder.com/32" class="rounded-circle me-2" alt="User"><a href="#" class="text-decoration-none">C-100020</a></td>
-            <td>M</td>
-            <td></td>
-            <td>H</td>
-            <td></td>
-            <td>0</td>
-            <td>
-                <a href="#"><i class="bi bi-file-earmark-ruled"></i></a>
-                <a href="#"><i class="bi bi-trash3-fill "></i></a>
-            </td>
-        </tr>
-        <tr>
-            <td><img src="https://via.placeholder.com/32" class="rounded-circle me-2" alt="User"><a href="#" class="text-decoration-none">C-100020</a></td>
-            <td>M</td>
-            <td></td>
-            <td>H</td>
-            <td></td>
-            <td>0</td>
-            <td>
-                <a href="#"><i class="bi bi-file-earmark-ruled"></i></a>
-                <a href="#"><i class="bi bi-trash3-fill "></i></a>
-            </td>
-        </tr>
-        <tr>
-            <td><img src="https://via.placeholder.com/32" class="rounded-circle me-2" alt="User"><a href="#" class="text-decoration-none">C-100020</a></td>
-            <td>M</td>
-            <td></td>
-            <td>H</td>
-            <td></td>
-            <td>0</td>
-            <td>
-                <a href="#"><i class="bi bi-file-earmark-ruled"></i></a>
-                <a href="#"><i class="bi bi-trash3-fill "></i></a>
-            </td>
-        </tr>
-        <tr>
-            <td><img src="https://via.placeholder.com/32" class="rounded-circle me-2" alt="User"><a href="#" class="text-decoration-none">C-100020</a></td>
-            <td>M</td>
-            <td></td>
-            <td>H</td>
-            <td></td>
-            <td>0</td>
-            <td>
-                <a href="#"><i class="bi bi-file-earmark-ruled"></i></a>
-                <a href="#"><i class="bi bi-trash3-fill "></i></a>
-            </td>
-        </tr>
-        <tr>
-            <td><img src="https://via.placeholder.com/32" class="rounded-circle me-2" alt="User"><a href="#" class="text-decoration-none">C-100020</a></td>
-            <td>M</td>
-            <td></td>
-            <td>H</td>
-            <td></td>
-            <td>0</td>
-            <td>
-                <a href="#"><i class="bi bi-file-earmark-ruled"></i></a>
-                <a href="#"><i class="bi bi-trash3-fill "></i></a>
-            </td>
-        </tr>
-        <tr>
-            <td><img src="https://via.placeholder.com/32" class="rounded-circle me-2" alt="User"><a href="#" class="text-decoration-none">C-100020</a></td>
-            <td>M</td>
-            <td></td>
-            <td>H</td>
-            <td></td>
-            <td>0</td>
-            <td>
-                <a href="#"><i class="bi bi-file-earmark-ruled"></i></a>
-                <a href="#"><i class="bi bi-trash3-fill "></i></a>
-            </td>
-        </tr>
-        <tr>
-            <td><img src="https://via.placeholder.com/32" class="rounded-circle me-2" alt="User"><a href="#" class="text-decoration-none">C-100020</a></td>
-            <td>M</td>
-            <td></td>
-            <td>H</td>
-            <td></td>
-            <td>0</td>
-            <td>
-                <a href="#"><i class="bi bi-file-earmark-ruled"></i></a>
-                <a href="#"><i class="bi bi-trash3-fill "></i></a>
-            </td>
-        <!-- Add more rows here -->
         </tbody>
     </table>
-    <!--    <nav aria-label="Page navigation ">-->
-    <ul class="pagination">
-        <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-            </a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-            </a>
-        </li>
-    </ul>
+
 </div>
