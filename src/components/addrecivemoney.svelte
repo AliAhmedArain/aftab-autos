@@ -12,7 +12,7 @@
     }
 </script>
 
-<div class="container-fluid p-0 vh-100 " style="width: 1550px;">
+<div class="container-fluid p-0 vh-100 ">
     <!-- Header -->
     <div class="d-flex justify-content-between align-items-center mb-4 border-bottom p-4">
         <h5 class="mb-0">Receive Money - [RM-12047]</h5>

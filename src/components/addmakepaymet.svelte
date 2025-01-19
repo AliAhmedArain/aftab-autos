@@ -1,4 +1,4 @@
-<div class="container-fluid p-0 vh-100 " style="width: 1550px;">
+<div class="container-fluid p-0 vh-100 ">
 
     <div class=" d-flex justify-content-between align-items-center border-bottom p-3 pb-2">
         <h5 class="mb-0">Make Payments - [PY-1830]</h5>

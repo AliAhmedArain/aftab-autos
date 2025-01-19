@@ -7,16 +7,16 @@
   import { writable } from 'svelte/store';
 
   // Reactive variable to track login state
-  let isLoggedIn = writable(false);
+  // let isLoggedIn = writable(false);
 
-  // Function to handle login
-  function handleLogin(email, password) {
+  // // Function to handle login
+  // function handleLogin(email, password) {
    
-    isLoggedIn.set(true);
-  }
+  //   isLoggedIn.set(true);
+  // }
 </script>
 
-{#if $isLoggedIn}
+<!-- {#if $isLoggedIn} -->
   <Nav/>
   <div class="app-container">
     <Sidebar />
@@ -24,9 +24,9 @@
       <Router {routes} />
     </main>
   </div>
-{:else}
+<!-- {:else}
   <Loginpage on:login={handleLogin} />
-{/if}
+{/if} -->
 
 <style>
   .app-container {

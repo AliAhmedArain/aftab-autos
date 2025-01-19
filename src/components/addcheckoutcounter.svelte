@@ -12,7 +12,7 @@
     }
 </style>
 
-<div class="container-fluid p-0 vh-100 " style="width: 1550px;">
+<div class="container-fluid p-0 vh-100 ">
     <!-- Toggle Buttons -->
     <div class="mb-4">
         <div class="form-check form-check-inline">

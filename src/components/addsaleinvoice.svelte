@@ -1,4 +1,4 @@
-<div class="container-fluid p-0 vh-100 " style="width: 1550px;">
+<div class="container-fluid p-0 vh-100 ">
 
     <div class=" d-flex justify-content-between align-items-center border-bottom p-4">
         <h5 class="mb-0">Sale Invoices - [SI-14365]</h5>

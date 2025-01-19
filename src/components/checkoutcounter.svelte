@@ -1,67 +1,82 @@
 <script>
-import posImage from '../assets/images/pos.png';
-  </script>
+    import posImage from '../assets/images/pos.png';
+</script>
 
-
-
-<div class="container-fluid p-0 vh-100 " style="width: 1550px;">
-    <div>
-        <div class="p- border-bottom">
-            <div class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-3 pt-3">
-                <h2>Checkout Counters</h2>
+<div class="container-fluid p-0 vh-100">
+    <!-- Header Section -->
+    <div class="border-bottom p-3">
+        <div class="row align-items-center mb-3">
+            <!-- Title Section -->
+            <div class="col-12 col-md-6">
+                <h2 class="h4">Checkout Counters</h2>
+            </div>
+            <!-- Add Button -->
+            <div class="col-12 col-md-6 text-center text-md-end mt-2 mt-md-0">
                 <a href="#/addcheckoutcounter" class="btn btn-success">+ Add Checkout Counters</a>
             </div>
-            <div class="d-flex justify-content-between mb-4 align-items-center">
-                <img src={posImage} height="210px" alt="POS Image">
-                <div>
-                    <button class="btn btn-success">Print</button>
-                    <button class="btn btn-success">Export to Excel</button>
-                </div>
+        </div>
+
+        <div class="row align-items-center mb-4">
+            <!-- Image Section -->
+            <div class="col-12 col-md-6 text-center text-md-start">
+                <img src={posImage} class="img-fluid" style="max-width: 100%; height: auto;" alt="POS Image">
+            </div>
+            <!-- Action Buttons -->
+            <div class="col-12 col-md-6 text-center text-md-end mt-3 mt-md-0">
+                <button class="btn btn-success mb-2 mb-md-0 me-md-2">Print</button>
+                <button class="btn btn-success mb-2 mb-md-0">Export to Excel</button>
             </div>
         </div>
-        <table class="table table-striped table-hover mt-3 ">
+    </div>
+
+    <!-- Table Section -->
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
             <thead class="table-light">
-            <tr>
-                <!--            <th><input type="checkbox" checked></th>-->
-                <th>Name</th>
-                <th>	Cash Account Name</th>
-                <th>	Warehouse Name </th>
-                <th>Status </th>
-                <th>Action</th>
-            </tr>
+                <tr>
+                    <th>Name</th>
+                    <th>Cash Account Name</th>
+                    <th>Warehouse Name</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>M</td>
-                <td></td>
-                <td>H</td>
-                <td></td>
-                <td>
-                    <button class="btn btn-outline-primary btn-sm">
-                        <i class="bi bi-file-earmark-ruled"></i>
-                    </button>
-                    <button class="btn btn-outline-danger btn-sm">
-                        <i class="bi bi-trash"></i>
-                    </button>
-                </td>
-            </tr>
-            <tr>
-                <td>Munawar</td>
-                <td>Banda</td>
-                <td>033292339</td>
-                <td></td>
-                <td>                    <button class="btn btn-outline-primary btn-sm">
-                    <i class="bi bi-file-earmark-ruled"></i>
-                </button>
-                    <button class="btn btn-outline-danger btn-sm">
-                        <i class="bi bi-trash"></i>
-                    </button>
-                </td>
-            </tr>
+                <tr>
+                    <td>M</td>
+                    <td></td>
+                    <td>H</td>
+                    <td></td>
+                    <td>
+                        <button class="btn btn-outline-primary btn-sm">
+                            <i class="bi bi-file-earmark-ruled"></i>
+                        </button>
+                        <button class="btn btn-outline-danger btn-sm">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Munawar</td>
+                    <td>Banda</td>
+                    <td>033292339</td>
+                    <td></td>
+                    <td>
+                        <button class="btn btn-outline-primary btn-sm">
+                            <i class="bi bi-file-earmark-ruled"></i>
+                        </button>
+                        <button class="btn btn-outline-danger btn-sm">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </td>
+                </tr>
             </tbody>
         </table>
-        <!--    <nav aria-label="Page navigation ">-->
-        <ul class="pagination">
+    </div>
+
+    <!-- Pagination Section -->
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center mt-3">
             <li class="page-item">
                 <a class="page-link" href="#" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
@@ -76,5 +91,5 @@ import posImage from '../assets/images/pos.png';
                 </a>
             </li>
         </ul>
-    </div>
+    </nav>
 </div>

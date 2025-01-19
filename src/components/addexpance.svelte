@@ -1,4 +1,4 @@
-    <div class="container-fluid p-0 vh-100 " style="width: 1550px;">
+    <div class="container-fluid p-0 vh-100 ">
         <!-- Header -->
         <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
             <h5 class="mb-0">Expenses - [E-000201]</h5>

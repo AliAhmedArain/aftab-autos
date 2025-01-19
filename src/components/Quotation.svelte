@@ -1,6 +1,9 @@
-<div class="container-fluid p-0 vh-100 " style="width: 1550px;">
+
+
+<!-- done  -->
+ 
+<div class="container-fluid p-0 ">
     <div class="p-3 border-bottom">
-        <!-- Header -->
         <div class="row align-items-center mb-3">
             <div class="col-12 mb-2">
                 <h2 class="h4">Sale Quotations</h2>
@@ -9,7 +12,6 @@
                 <a href="#/addQuotation" class="btn btn-success ">+ Add Sale Quotations</a>
             </div>
         </div>
-        <!-- Buttons -->
         <div class="row align-items-center mb-4">
             <div class="col-12 col-md-6 mb-2 mb-md-0">
                 <button class="btn btn-success   ">Filters</button>
@@ -23,7 +25,6 @@
             </div>
         </div>
     </div>
-    <!-- Table -->
     <div class="table-responsive d-none d-md-block">
         <table class="table table-striped table-hover">
             <thead class="table-light">
@@ -50,7 +51,7 @@
                 <td>0</td>
                 <td>0</td>
                 <td>
-                    <button class="btn btn-outline-danger btn-sm">
+                    <button class="btn btn-outline-danger btn-sm" aria-label="Delete">
                         <i class="bi bi-trash"></i>
                     </button>
                 </td>
@@ -58,7 +59,6 @@
             </tbody>
         </table>
     </div>
-    <!-- Vertical Table -->
     <div class="d-block d-md-none">
         <div class="card mb-3">
             <div class="card-body">
@@ -70,13 +70,12 @@
                 <p><strong>Gross Amount:</strong> 0</p>
                 <p><strong>Net Amount:</strong> 0</p>
                 <p><strong>Status:</strong> 0</p>
-                <button class="btn btn-outline-danger btn-sm">
+                <button class="btn btn-outline-danger btn-sm" aria-label="Delete">
                     <i class="bi bi-trash"></i>
                 </button>
             </div>
         </div>
     </div>
-    <!-- Pagination -->
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center mt-3">
             <li class="page-item">
@@ -95,3 +94,6 @@
         </ul>
     </nav>
 </div>
+
+
+

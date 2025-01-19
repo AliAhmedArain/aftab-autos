@@ -1,4 +1,4 @@
-<div class="container-fluid p-0 vh-100 " style="width: 1550px;">
+<div class="container-fluid p-0 vh-100 " >
     <!-- Card for Customer Categories Section -->
     <div class="card shadow-sm vh-100">
         <div class="card-header d-flex justify-content-between align-items-center">

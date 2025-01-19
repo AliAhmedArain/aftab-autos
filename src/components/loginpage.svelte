@@ -143,7 +143,7 @@
       }
     }
   </style>
-  <div class="bg-primary">
+  <div class="bg-primary vh-100 d-flex justify-content-center align-items-center">
   <div class="container">
     <div class="forms-container">
       <div class="form-control" class:hidden={currentForm !== "signup"}>

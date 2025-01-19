@@ -3,7 +3,8 @@
 </script>
 
 <div class="container-fluid p-0">
-  <nav class="navbar navbar-light border-bottom custom-bg-c d-lg-none">
+
+  <nav class="navbar navbar-light border-bottom custom-bg-c d-lg-none  p-0 bg-danger">  
     <div class="container-fluid">
       <div class="align-items-center">
         <button
@@ -33,7 +34,7 @@
               href="#menu-dashboards"
             >
               <span
-                ><i class="bi bi-clipboard-data-fill mr-2"></i>Dashboard</span
+                ><i class="bi bi-calendar4-range mr-2"></i>Dashboard</span
               >
             </a>
           </li>
@@ -54,22 +55,22 @@
                   <a href="#/quotation" class="nav-link text-dark">Quotation</a>
                 </li>
                 <li>
-                  <a href="./inviocesale.html" class="nav-link text-dark"
+                  <a href="#/invoice" class="nav-link text-dark"
                     >invoice</a
                   >
                 </li>
                 <li>
-                  <a href="./SaleReturns.html" class="nav-link text-dark"
+                  <a href="#/salereturn" class="nav-link text-dark"
                     >return</a
                   >
                 </li>
                 <li>
-                  <a href="./ReceiveMoney.html" class="nav-link text-dark"
+                  <a href="#/recivemoney" class="nav-link text-dark"
                     >receive money</a
                   >
                 </li>
                 <li>
-                  <a href="./refundsales.html" class="nav-link text-dark"
+                  <a href="#/refund" class="nav-link text-dark"
                     >refund</a
                   >
                 </li>
@@ -84,34 +85,34 @@
               data-bs-toggle="collapse"
               href="#menu-PURCHASE1"
             >
-              <span><i class="bi bi-clipboard-data-fill mr-2"></i>PURCHASE</span
+              <span><i class="bi bi-bag-check-fill mr-2"></i>PURCHASE</span
               >
               <span class="fw-bold">+</span>
             </a>
             <div class="collapse" id="menu-PURCHASE1">
               <ul class="nav flex-column ms-3 ml-4">
                 <li>
-                  <a href="./PURCHASEorder.html" class="nav-link text-dark"
+                  <a href="#/purchaseorder" class="nav-link text-dark"
                     >order</a
                   >
                 </li>
                 <li>
-                  <a href="./purchaseinvoice.html" class="nav-link text-dark"
+                  <a href="#/purchaseinvoice" class="nav-link text-dark"
                     >invoice</a
                   >
                 </li>
                 <li>
-                  <a href="./purchasereturns.html" class="nav-link text-dark"
+                  <a href="#/purchasereturn" class="nav-link text-dark"
                     >return</a
                   >
                 </li>
                 <li>
-                  <a href="purchaseMakePayment.html" class="nav-link text-dark"
+                  <a href="#/purchasemakepayment" class="nav-link text-dark"
                     >make payment</a
                   >
                 </li>
                 <li>
-                  <a href="./purchasereturns.html" class="nav-link text-dark"
+                  <a href="#/purchaserefund" class="nav-link text-dark"
                     >refund</a
                   >
                 </li>
@@ -126,18 +127,18 @@
               data-bs-toggle="collapse"
               href="#menu-pos1"
             >
-              <span><i class="bi bi-clipboard-data-fill mr-2"></i>POS</span>
+              <span><i class="bi bi-pc-display-horizontal mr-2"></i>POS</span>
               <span class="fw-bold">+</span>
             </a>
             <div class="collapse" id="menu-pos1">
               <ul class="nav flex-column ms-3 ml-4">
                 <li>
-                  <a href="./checkoutcounter.html" class="nav-link text-dark"
+                  <a href="#/checkoutcounter" class="nav-link text-dark"
                     >Checkout counter</a
                   >
                 </li>
                 <li>
-                  <a href="./pos2.html" class="nav-link text-dark">pos</a>
+                  <a href="#/poss" class="nav-link text-dark">pos</a>
                 </li>
               </ul>
             </div>
@@ -150,14 +151,14 @@
               data-bs-toggle="collapse"
               href="#menu-account1"
             >
-              <span><i class="bi bi-clipboard-data-fill mr-2"></i>ACCOUNTS</span
+              <span><i class="bi bi-menu-button mr-2"></i>ACCOUNTS</span
               >
               <span class="fw-bold">+</span>
             </a>
             <div class="collapse" id="menu-account1">
               <ul class="nav flex-column ms-3 ml-4">
                 <li>
-                  <a href="./expenseaccount.html" class="nav-link text-dark"
+                  <a href="#/expanseaccount" class="nav-link text-dark"
                     >Expense</a
                   >
                 </li>
@@ -172,25 +173,25 @@
               href="#menu-inventory1"
             >
               <span
-                ><i class="bi bi-clipboard-data-fill mr-2"></i>INVENTORY</span
+                ><i class="bi bi-bank mr-2"></i>INVENTORY</span
               >
               <span class="fw-bold">+</span>
             </a>
             <div class="collapse" id="menu-inventory1">
               <ul class="nav flex-column ms-3 ml-4">
                 <li>
-                  <a href="./StockMovements%20.html" class="nav-link text-dark"
+                  <a href="#/stock-movement" class="nav-link text-dark"
                     >stock movement</a
                   >
                 </li>
                 <li>
-                  <a href="./StockAdjustments.html" class="nav-link text-dark"
+                  <a href="#/stockadjustment" class="nav-link text-dark"
                     >stock adjustment</a
                   >
                 </li>
                 <li>
                   <a
-                    href="./ScheduledValuations.html"
+                    href="#/stockvaluation"
                     class="nav-link text-dark">Scheduled Valuation</a
                   >
                 </li>
@@ -201,9 +202,63 @@
             <a
               class="nav-link text-dark d-flex justify-content-between align-items-center"
               data-bs-toggle="collapse"
+              href="#menu-setup"
+            >
+              <span><i class="fa-sharp-duotone fa-solid fa-gear mr-2" style="font-size: 20px;"></i>SETUP</span>
+              <span class="fw-bold">+</span>
+            </a>
+            <div class="collapse" id="menu-setup">
+              <ul class="nav flex-column ms-3 ml-4">
+                <li>
+                  <a href="#/customer" class="nav-link text-dark">Customer</a>
+                </li>
+                <li>
+                  <a href="#/Vendor" class="nav-link text-dark">Vendors</a>
+                </li>
+                <li>
+                  <a href="#/Products" class="nav-link text-dark">Products</a>
+                </li>
+                <li>
+                  <a href="#/User" class="nav-link text-dark">Users</a>
+                </li>
+                <li>
+                  <a href="#/customerCate" class="nav-link text-dark">Customer Categories</a>
+                </li>
+                <li>
+                  <a href="#/vendorcate" class="nav-link text-dark">Vendor Categories</a>
+                </li>
+                <li>
+                  <a href="#/productcate" class="nav-link text-dark">Product Categories</a>
+                </li>
+                <li>
+                  <a href="#/brand" class="nav-link text-dark">Brands</a>
+                </li>
+                <li>
+                  <a href="#/tax" class="nav-link text-dark">Tax</a>
+                </li>
+                <li>
+                  <a href="#/discount" class="nav-link text-dark">Discounts</a>
+                </li>
+                <li>
+                  <a href="#/warehouse" class="nav-link text-dark">Warehouses</a>
+                </li>
+                <li>
+                  <a href="#/mpl" class="nav-link text-dark">Multiple Price Levels</a>
+                </li>
+                <li>
+                  <a href="#/employ" class="nav-link text-dark">Employees</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          
+          <li class="nav-item mb-2 border-bottom">
+            <a
+              class="nav-link text-dark d-flex justify-content-between align-items-center"
+              data-bs-toggle="collapse"
               href="#menu-reports"
             >
-              <span><i class="bi bi-person-vcard mr-2"></i>REPORTS</span>
+              <span><i class="bi bi-file-earmark-person-fill mr-2"></i>REPORTS</span>
             </a>
           </li>
         </ul>
@@ -211,7 +266,7 @@
     </div>
   </nav>
 
-  <nav class="navbar navbar-light border-bottom p-0 m-0 custom-bg-c d-none d-lg-flex">
+  <nav class="navbar navbar-light border-bottom p-0 m-0 custom-bg-c d-none d-lg-flex ">
     <div class="d-flex align-items-center">
       <img src="images/AFTAB_AUTO__1_-removebg-preview.png" alt="Logo" class="img-fluid ml-2" style="height: 70px;" />
       <a class="navbar-brand d-flex align-items-center" href="#">

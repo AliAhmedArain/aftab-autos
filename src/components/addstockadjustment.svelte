@@ -1,4 +1,4 @@
-<div class="container-fluid p-0 vh-100 " style="width: 1550px;">
+<div class="container-fluid p-0 vh-100 ">
     <!-- Header -->
     <div class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2">
         <h5 class="mb-0">Stock Adjustment - [SA-0538]</h5>

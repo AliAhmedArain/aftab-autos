@@ -1,4 +1,4 @@
-<div class="container-fluid p-0 vh-100 " style="width: 1550px;">
+<div class="container-fluid p-0 vh-100 ">
     <div class="p- border-bottom">
         <div class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-3 pt-3">
             <h2>Products</h2>

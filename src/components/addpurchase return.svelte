@@ -20,7 +20,7 @@
   </script>
   
   <!-- Bootstrap-based Purchase Returns Form in Svelte -->
-  <div class="container-fluid p-0 vh-100 " style="width: 1550px;">
+  <div class="container-fluid p-0 vh-100 ">
       <!-- Header Section -->
       <div class="d-flex justify-content-between align-items-center mb-4">
           <h4>Purchase Returns - [{number}]</h4>

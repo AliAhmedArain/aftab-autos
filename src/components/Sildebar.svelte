@@ -1,4 +1,9 @@
-<div class="container-fluid p-0 ">
+<script>
+
+    import Quotation from "./Quotation.svelte";
+
+</script>
+
     <div class="d-none d-lg-flex">
         <!-- Sidebar -->
         <div class="custom-bg-c vh-100" style="width: 250px">
@@ -13,7 +18,7 @@
                     <li class="nav-item mb-2 border-bottom">
                         <a class="nav-link text-dark d-flex justify-content-between align-items-center"
                            data-bs-toggle="collapse" href="#menu-dashboards">
-                            <span><i class="bi bi-clipboard-data-fill "></i>Dashboard</span>
+                            <span><i class="bi bi-calendar4-range mr-2"></i>Dashboard</span>
                         </a>
                     </li>
 
@@ -39,7 +44,7 @@
                     <li class="nav-item mb-2 border-bottom">
                         <a class="nav-link text-dark d-flex justify-content-between align-items-center"
                            data-bs-toggle="collapse" href="#menu-PURCHASE">
-                            <span><i class="bi bi-clipboard-data-fill mr-2"></i>PURCHASE</span>
+                            <span><i class="bi bi-bag-check-fill mr-2"></i>PURCHASE</span>
                             <span class="fw-bold">+</span>
                         </a>
                         <div class="collapse" id="menu-PURCHASE">
@@ -57,7 +62,7 @@
                     <li class="nav-item mb-2 border-bottom">
                         <a class="nav-link text-dark d-flex justify-content-between align-items-center"
                            data-bs-toggle="collapse" href="#menu-pos">
-                            <span><i class="bi bi-clipboard-data-fill mr-2"></i>POS</span>
+                            <span><i class="bi bi-pc-display-horizontal mr-2"></i>POS</span>
                             <span class="fw-bold">+</span>
                         </a>
                         <div class="collapse" id="menu-pos">
@@ -73,7 +78,7 @@
                     <li class="nav-item mb-2 border-bottom">
                         <a class="nav-link text-dark d-flex justify-content-between align-items-center"
                            data-bs-toggle="collapse" href="#menu-account">
-                            <span><i class="bi bi-clipboard-data-fill mr-2"></i>ACCOUNTS</span>
+                            <span><i class="bi bi-menu-button mr-2"></i>ACCOUNTS</span>
                             <span class="fw-bold">+</span>
                         </a>
                         <div class="collapse" id="menu-account">
@@ -86,7 +91,7 @@
                     <li class="nav-item mb-2 border-bottom">
                         <a class="nav-link text-dark d-flex justify-content-between align-items-center"
                            data-bs-toggle="collapse" href="#menu-inventory">
-                            <span><i class="bi bi-clipboard-data-fill mr-2"></i>INVENTORY</span>
+                            <span><i class="bi bi-bank mr-2"></i>INVENTORY</span>
                             <span class="fw-bold">+</span>
                         </a>
                         <div class="collapse" id="menu-inventory">
@@ -101,13 +106,16 @@
                     <li class="nav-item mb-2 border-bottom">
                         <a class="nav-link text-dark d-flex justify-content-between align-items-center"
                            data-bs-toggle="collapse" href="#menu-reports">
-                            <span><i class="bi bi-person-vcard mr-2"></i>REPORTS</span>
+                            <span><i class="bi bi-file-earmark-person-fill mr-2"></i>REPORTS</span>
                         </a>
                     </li>
                 </ul>
         </div>
+        <!-- <Quotation></Quotation> -->
+
+
+        
     </div>
-</div>
 
 <style>
     .custom-bg-c {
