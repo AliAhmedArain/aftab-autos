@@ -1,51 +1,41 @@
 <script>
-    import {onMount} from "svelte";
-    import DataTable from "datatables.net-bs5"; // Import DataTables with Bootstrap 5 integration
-    import "datatables.net-bs5/css/dataTables.bootstrap5.min.css"; // Include the CSS
+    import DataTable from './table.svelte';
 
-    let table;
+    // Define columns
+    const columns = [
+        { label: '#Code' , field: 'code' },
+        { label: 'Name', field: 'name' },
+        { label: 'Category', field: 'category' },
+        { label: 'Contact Person', field: 'contactPerson' },
+        { label: 'Email', field: 'email' },
+        { label: 'Phone', field: 'phone' },
+        { label: 'Action', field: 'action' },
+    ];
 
-    onMount(() => {
-        // Initialize DataTable
-        const dataTable = new DataTable(table, {
-            paging: true,
-            searching: true,
-            ordering: true,
-            pageLength: 5,
-            language: {
-                search: "Filter:"
-            },
-            initComplete : function () {
-                table
-                    .columns()
-                    .every(function () {
-                        let column = this;
-                        let title = column.footer().textContent;
+    // Define rows
+    const rows = [
+        { code: '1', name: 'John Doe', category: '30', contactPerson: 'New York', email: 'john@example.com', phone: '123-456', action: 'Edit' },
+        { code: '2', name: 'Jane Smith', category: '25', contactPerson: 'Los Angeles', email: 'jane@example.com', phone: '789-012', action: 'Edit' },
+        { code: '3', name: 'Robert Brown', category: '28', contactPerson: 'Chicago', email: 'robert@example.com', phone: '345-678', action: 'Edit' },
+        { code: '4', name: 'John Doe', category: '30', contactPerson: 'New York', email: 'john@example.com', phone: '123-456', action: 'Edit' },
+        { code: '5', name: 'Jane Smith', category: '25', contactPerson: 'Los Angeles', email: 'jane@example.com', phone: '789-012', action: 'Edit' },
+        { code: '6', name: 'Robert Brown', category: '28', contactPerson: 'Chicago', email: 'robert@example.com', phone: '345-678', action: 'Edit' },
+   
+    ];
 
-                        // Create input element
-                        let input = document.createElement('input');
-                        input.placeholder = title;
-                        column.footer().replaceChildren(input);
-
-                        // Event listener for user input
-                        input.addEventListener('keyup', () => {
-                            if (column.search() !== this.value) {
-                                column.search(input.value).draw();
-                            }
-                        });
-                    });
-            }
-
-        });
-
-        // Clean up DataTable on component unmount
-        return () => {
-            dataTable.destroy();
-        };
-    });
+    // Additional options
+    const options = {
+        paging: true,
+        searching: true,
+        ordering: true,
+        pageLength: 6,
+        language: {
+            search: "Filter:"
+        },
+    };
 </script>
 
-<div class="container-fluid p-0 vh-100 ">
+<div class="container-fluid p-0 vh-100">
     <div class="p- border-bottom">
         <div class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-3 pt-3">
             <h2>Customers</h2>
@@ -60,35 +50,7 @@
             </div>
         </div>
     </div>
-    <table bind:this={table} class="table table-striped table-hover mt-3 ">
-        <thead>
-        <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>City</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>1</td>
-            <td>John Doe</td>
-            <td>30</td>
-            <td>New York</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Jane Smith</td>
-            <td>25</td>
-            <td>Los Angeles</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Robert Brown</td>
-            <td>28</td>
-            <td>Chicago</td>
-        </tr>
-        </tbody>
-    </table>
 
+    <!-- Use the reusable DataTable component -->
+    <DataTable {columns} {rows} {options} />
 </div>
