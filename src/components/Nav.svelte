@@ -4,7 +4,7 @@
 
 <div class="container-fluid p-0">
 
-  <nav class="navbar navbar-light border-bottom custom-bg-c d-lg-none  p-0 bg-danger">  
+  <nav class="navbar navbar-light border-bottom custom-bg-c d-lg-none  p-0 ">  
     <div class="container-fluid">
       <div class="align-items-center">
         <button
@@ -34,7 +34,7 @@
               href="#menu-dashboards"
             >
               <span
-                ><i class="bi bi-calendar4-range mr-2"></i>Dashboard</span
+                ><i class="bi bi-calendar4-range mx-1"></i>Dashboard</span
               >
             </a>
           </li>
@@ -46,7 +46,7 @@
               data-bs-toggle="collapse"
               href="#menu-sales1"
             >
-              <span><i class="bi bi-clipboard-data-fill mr-2"></i>SALES</span>
+              <span><i class="bi bi-clipboard-data-fill mx-1"></i>SALES</span>
               <span class="fw-bold">+</span>
             </a>
             <div class="collapse" id="menu-sales1">
@@ -85,7 +85,7 @@
               data-bs-toggle="collapse"
               href="#menu-PURCHASE1"
             >
-              <span><i class="bi bi-bag-check-fill mr-2"></i>PURCHASE</span
+              <span><i class="bi bi-bag-check-fill mx-1"></i>PURCHASE</span
               >
               <span class="fw-bold">+</span>
             </a>
@@ -127,7 +127,7 @@
               data-bs-toggle="collapse"
               href="#menu-pos1"
             >
-              <span><i class="bi bi-pc-display-horizontal mr-2"></i>POS</span>
+              <span><i class="bi bi-pc-display-horizontal mx-1"></i>POS</span>
               <span class="fw-bold">+</span>
             </a>
             <div class="collapse" id="menu-pos1">
@@ -151,7 +151,7 @@
               data-bs-toggle="collapse"
               href="#menu-account1"
             >
-              <span><i class="bi bi-menu-button mr-2"></i>ACCOUNTS</span
+              <span><i class="bi bi-menu-button mx-1"></i>ACCOUNTS</span
               >
               <span class="fw-bold">+</span>
             </a>
@@ -173,7 +173,7 @@
               href="#menu-inventory1"
             >
               <span
-                ><i class="bi bi-bank mr-2"></i>INVENTORY</span
+                ><i class="bi bi-bank mx-1"></i>INVENTORY</span
               >
               <span class="fw-bold">+</span>
             </a>
@@ -204,7 +204,7 @@
               data-bs-toggle="collapse"
               href="#menu-setup"
             >
-              <span><i class="fa-sharp-duotone fa-solid fa-gear mr-2" style="font-size: 20px;"></i>SETUP</span>
+              <span><i class="fa-sharp-duotone fa-solid fa-gear mx-1" style="font-size: 20px;"></i>SETUP</span>
               <span class="fw-bold">+</span>
             </a>
             <div class="collapse" id="menu-setup">
@@ -258,7 +258,7 @@
               data-bs-toggle="collapse"
               href="#menu-reports"
             >
-              <span><i class="bi bi-file-earmark-person-fill mr-2"></i>REPORTS</span>
+              <span><i class="bi bi-file-earmark-person-fill mx-1"></i>REPORTS</span>
             </a>
           </li>
         </ul>
@@ -268,8 +268,8 @@
 
   <nav class="navbar navbar-light border-bottom p-0 m-0 custom-bg-c d-none d-lg-flex ">
     <div class="d-flex align-items-center">
-      <img src="images/AFTAB_AUTO__1_-removebg-preview.png" alt="Logo" class="img-fluid ml-2" style="height: 70px;" />
-      <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src={logo} alt="Logo" class="img-fluid" style="height: 70px;" />
+      <a class="navbar-brand d-flex align-items-center mx-2" href="#">
         <strong class="text-success ml-1">AFTAB</strong>
         <span class="text-muted ml-1">AUTOS</span>
       </a>
@@ -279,7 +279,7 @@
       <!-- Support Dropdown -->
       <div class="dropdown">
         <a href="#" class="nav-link d-flex align-items-center text-muted" id="userDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fa-sharp fa-solid fa-headset fa-lg mb-2" style="font-size: 28px;"></i>
+          <i class="fa-sharp fa-solid fa-headset fa-lg mb-2 mx-1" style="font-size: 28px;"></i>
           <span class="h6" style="font-weight: bolder;">SUPPORT</span>
         </a>
         <div class="dropdown-menu dropdown-menu-start" aria-labelledby="userDropdown1">
@@ -287,7 +287,7 @@
           <a class="dropdown-item" href="#">+92 335 1279228</a>
           <div class="dropdown-divider"></div>
           <div class="d-flex justify-content-center">
-            <button type="button" class="btn btn-success">Contact Us</button>
+            <button type="button" class="btn btn-success mx-1">Contact Us</button>
           </div>
         </div>
       </div>
@@ -295,8 +295,8 @@
       <!-- Create Dropdown -->
       <div class="dropdown">
         <a href="#" class="nav-link d-flex align-items-center text-muted" id="userDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fa-sharp fa-solid fa-square-plus mr-2 mb-2" style="font-size: 28px;"></i>
-          <span class="h6" style="font-weight: bolder;">CREATE</span>
+          <i class="fa-sharp fa-solid fa-square-plus mx-1 mb-2" style="font-size: 28px;"></i>
+          <span class="h6" style="font-weight: bolder ;">CREATE</span>
         </a>
         <div class="dropdown-menu dropdown-menu-start" aria-labelledby="userDropdown2">
           <a href="#/addQuotation" class="dropdown-item">Sale Quotation</a>
@@ -312,7 +312,7 @@
       <!-- Setup Dropdown -->
       <div class="dropdown">
         <a href="#" class="nav-link d-flex align-items-center text-muted" id="userDropdowns" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fa-sharp-duotone fa-solid fa-gear mr-4 mb-2" style="font-size: 28px;"></i>
+          <i class="fa-sharp-duotone fa-solid fa-gear mx-1 mb-2" style="font-size: 28px;"></i>
           <span class="h6" style="font-weight: bolder;">SETUP</span>
         </a>
         <div class="dropdown-menu dropdown-menu-start" aria-labelledby="userDropdowns">
