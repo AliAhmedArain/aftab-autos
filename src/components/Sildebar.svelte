@@ -18,7 +18,7 @@
                     <li class="nav-item mb-2 border-bottom">
                         <a class="nav-link text-dark d-flex justify-content-between align-items-center"
                            data-bs-toggle="collapse" href="#menu-dashboards">
-                            <span><i class="bi bi-calendar4-range mr-2"></i>Dashboard</span>
+                            <span><i class="bi bi-calendar4-range mx-1"></i>Dashboard</span>
                         </a>
                     </li>
 
@@ -26,7 +26,7 @@
                     <li class="nav-item mb-2 border-bottom">
                         <a class="nav-link text-dark d-flex justify-content-between align-items-center"
                            data-bs-toggle="collapse" href="#menu-sales">
-                            <span><i class="bi bi-clipboard-data-fill mr-2"></i>SALES</span>
+                            <span><i class="bi bi-clipboard-data-fill mx-1"></i>SALES</span>
                             <span class="fw-bold">+</span>
                         </a>
                         <div class="collapse" id="menu-sales">
@@ -44,7 +44,7 @@
                     <li class="nav-item mb-2 border-bottom">
                         <a class="nav-link text-dark d-flex justify-content-between align-items-center"
                            data-bs-toggle="collapse" href="#menu-PURCHASE">
-                            <span><i class="bi bi-bag-check-fill mr-2"></i>PURCHASE</span>
+                            <span><i class="bi bi-bag-check-fill mx-1"></i>PURCHASE</span>
                             <span class="fw-bold">+</span>
                         </a>
                         <div class="collapse" id="menu-PURCHASE">
@@ -62,7 +62,7 @@
                     <li class="nav-item mb-2 border-bottom">
                         <a class="nav-link text-dark d-flex justify-content-between align-items-center"
                            data-bs-toggle="collapse" href="#menu-pos">
-                            <span><i class="bi bi-pc-display-horizontal mr-2"></i>POS</span>
+                            <span><i class="bi bi-pc-display-horizontal mx-1"></i>POS</span>
                             <span class="fw-bold">+</span>
                         </a>
                         <div class="collapse" id="menu-pos">
@@ -78,7 +78,7 @@
                     <li class="nav-item mb-2 border-bottom">
                         <a class="nav-link text-dark d-flex justify-content-between align-items-center"
                            data-bs-toggle="collapse" href="#menu-account">
-                            <span><i class="bi bi-menu-button mr-2"></i>ACCOUNTS</span>
+                            <span><i class="bi bi-menu-button mx-1"></i>ACCOUNTS</span>
                             <span class="fw-bold">+</span>
                         </a>
                         <div class="collapse" id="menu-account">
@@ -91,7 +91,7 @@
                     <li class="nav-item mb-2 border-bottom">
                         <a class="nav-link text-dark d-flex justify-content-between align-items-center"
                            data-bs-toggle="collapse" href="#menu-inventory">
-                            <span><i class="bi bi-bank mr-2"></i>INVENTORY</span>
+                            <span><i class="bi bi-bank mx-1"></i>INVENTORY</span>
                             <span class="fw-bold">+</span>
                         </a>
                         <div class="collapse" id="menu-inventory">
@@ -106,7 +106,7 @@
                     <li class="nav-item mb-2 border-bottom">
                         <a class="nav-link text-dark d-flex justify-content-between align-items-center"
                            data-bs-toggle="collapse" href="#menu-reports">
-                            <span><i class="bi bi-file-earmark-person-fill mr-2"></i>REPORTS</span>
+                            <span><i class="bi bi-file-earmark-person-fill mx-1"></i>REPORTS</span>
                         </a>
                     </li>
                 </ul>
