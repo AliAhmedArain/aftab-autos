@@ -1,371 +1,209 @@
 <script>
-  import logo from "../assets/images/logo.png";
+  import { onMount } from 'svelte';
+  import { fade } from 'svelte/transition';
 </script>
 
-<div class="container-fluid p-0">
 
-  <nav class="navbar navbar-light border-bottom custom-bg-c d-lg-none  p-0 ">  
-    <div class="container-fluid">
-      <div class="align-items-center">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarContent"
-          aria-controls="navbarContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <img src={logo} alt="Logo" class="img-fluid" style="height: 70px;" />
 
-        <strong class="text-success">AFTAB</strong>
-        <span class="text-muted">AUTOS</span>
-      </div>
-      <!-- Collapsible Content -->
-      <div class="collapse navbar-collapse" id="navbarContent">
-        <ul class="nav flex-column mt-4">
-          <!-- Dashboards -->
-          <li class="nav-item mb-2 border-bottom">
-            <a
-              class="nav-link text-dark d-flex justify-content-between align-items-center"
-              data-bs-toggle="collapse"
-              href="#menu-dashboards"
-            >
-              <span
-                ><i class="bi bi-calendar4-range mx-1"></i>Dashboard</span
-              >
-            </a>
-          </li>
-
-          <!-- Customers -->
-          <li class="nav-item mb-2 border-bottom">
-            <a
-              class="nav-link text-dark d-flex justify-content-between align-items-center"
-              data-bs-toggle="collapse"
-              href="#menu-sales1"
-            >
-              <span><i class="bi bi-clipboard-data-fill mx-1"></i>SALES</span>
-              <span class="fw-bold">+</span>
-            </a>
-            <div class="collapse" id="menu-sales1">
-              <ul class="nav flex-column ms-3 ml-4">
-                <li>
-                  <a href="#/quotation" class="nav-link text-dark">Quotation</a>
-                </li>
-                <li>
-                  <a href="#/invoice" class="nav-link text-dark"
-                    >invoice</a
-                  >
-                </li>
-                <li>
-                  <a href="#/salereturn" class="nav-link text-dark"
-                    >return</a
-                  >
-                </li>
-                <li>
-                  <a href="#/recivemoney" class="nav-link text-dark"
-                    >receive money</a
-                  >
-                </li>
-                <li>
-                  <a href="#/refund" class="nav-link text-dark"
-                    >refund</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </li>
-
-          <!-- Projects -->
-          <li class="nav-item mb-2 border-bottom">
-            <a
-              class="nav-link text-dark d-flex justify-content-between align-items-center"
-              data-bs-toggle="collapse"
-              href="#menu-PURCHASE1"
-            >
-              <span><i class="bi bi-bag-check-fill mx-1"></i>PURCHASE</span
-              >
-              <span class="fw-bold">+</span>
-            </a>
-            <div class="collapse" id="menu-PURCHASE1">
-              <ul class="nav flex-column ms-3 ml-4">
-                <li>
-                  <a href="#/purchaseorder" class="nav-link text-dark"
-                    >order</a
-                  >
-                </li>
-                <li>
-                  <a href="#/purchaseinvoice" class="nav-link text-dark"
-                    >invoice</a
-                  >
-                </li>
-                <li>
-                  <a href="#/purchasereturn" class="nav-link text-dark"
-                    >return</a
-                  >
-                </li>
-                <li>
-                  <a href="#/purchasemakepayment" class="nav-link text-dark"
-                    >make payment</a
-                  >
-                </li>
-                <li>
-                  <a href="#/purchaserefund" class="nav-link text-dark"
-                    >refund</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </li>
-
-          <!-- Account -->
-          <li class="nav-item mb-2 border-bottom">
-            <a
-              class="nav-link text-dark d-flex justify-content-between align-items-center"
-              data-bs-toggle="collapse"
-              href="#menu-pos1"
-            >
-              <span><i class="bi bi-pc-display-horizontal mx-1"></i>POS</span>
-              <span class="fw-bold">+</span>
-            </a>
-            <div class="collapse" id="menu-pos1">
-              <ul class="nav flex-column ms-3 ml-4">
-                <li>
-                  <a href="#/checkoutcounter" class="nav-link text-dark"
-                    >Checkout counter</a
-                  >
-                </li>
-                <li>
-                  <a href="#/poss" class="nav-link text-dark">pos</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-
-          <!-- Add similar sections for Orders, Posts, Authentication -->
-          <li class="nav-item mb-2 border-bottom">
-            <a
-              class="nav-link text-dark d-flex justify-content-between align-items-center"
-              data-bs-toggle="collapse"
-              href="#menu-account1"
-            >
-              <span><i class="bi bi-menu-button mx-1"></i>ACCOUNTS</span
-              >
-              <span class="fw-bold">+</span>
-            </a>
-            <div class="collapse" id="menu-account1">
-              <ul class="nav flex-column ms-3 ml-4">
-                <li>
-                  <a href="#/expanseaccount" class="nav-link text-dark"
-                    >Expense</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </li>
-
-          <li class="nav-item mb-2 border-bottom">
-            <a
-              class="nav-link text-dark d-flex justify-content-between align-items-center"
-              data-bs-toggle="collapse"
-              href="#menu-inventory1"
-            >
-              <span
-                ><i class="bi bi-bank mx-1"></i>INVENTORY</span
-              >
-              <span class="fw-bold">+</span>
-            </a>
-            <div class="collapse" id="menu-inventory1">
-              <ul class="nav flex-column ms-3 ml-4">
-                <li>
-                  <a href="#/stock-movement" class="nav-link text-dark"
-                    >stock movement</a
-                  >
-                </li>
-                <li>
-                  <a href="#/stockadjustment" class="nav-link text-dark"
-                    >stock adjustment</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#/stockvaluation"
-                    class="nav-link text-dark">Scheduled Valuation</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item mb-2 border-bottom">
-            <a
-              class="nav-link text-dark d-flex justify-content-between align-items-center"
-              data-bs-toggle="collapse"
-              href="#menu-setup"
-            >
-              <span><i class="fa-sharp-duotone fa-solid fa-gear mx-1" style="font-size: 20px;"></i>SETUP</span>
-              <span class="fw-bold">+</span>
-            </a>
-            <div class="collapse" id="menu-setup">
-              <ul class="nav flex-column ms-3 ml-4">
-                <li>
-                  <a href="#/customer" class="nav-link text-dark">Customer</a>
-                </li>
-                <li>
-                  <a href="#/Vendor" class="nav-link text-dark">Vendors</a>
-                </li>
-                <li>
-                  <a href="#/Products" class="nav-link text-dark">Products</a>
-                </li>
-                <li>
-                  <a href="#/User" class="nav-link text-dark">Users</a>
-                </li>
-                <li>
-                  <a href="#/customerCate" class="nav-link text-dark">Customer Categories</a>
-                </li>
-                <li>
-                  <a href="#/vendorcate" class="nav-link text-dark">Vendor Categories</a>
-                </li>
-                <li>
-                  <a href="#/productcate" class="nav-link text-dark">Product Categories</a>
-                </li>
-                <li>
-                  <a href="#/brand" class="nav-link text-dark">Brands</a>
-                </li>
-                <li>
-                  <a href="#/tax" class="nav-link text-dark">Tax</a>
-                </li>
-                <li>
-                  <a href="#/discount" class="nav-link text-dark">Discounts</a>
-                </li>
-                <li>
-                  <a href="#/warehouse" class="nav-link text-dark">Warehouses</a>
-                </li>
-                <li>
-                  <a href="#/mpl" class="nav-link text-dark">Multiple Price Levels</a>
-                </li>
-                <li>
-                  <a href="#/employ" class="nav-link text-dark">Employees</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          
-          <li class="nav-item mb-2 border-bottom">
-            <a
-              class="nav-link text-dark d-flex justify-content-between align-items-center"
-              data-bs-toggle="collapse"
-              href="#menu-reports"
-            >
-              <span><i class="bi bi-file-earmark-person-fill mx-1"></i>REPORTS</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <nav class="navbar navbar-light border-bottom p-0 m-0 custom-bg-c d-none d-lg-flex ">
-    <div class="d-flex align-items-center">
-      <img src={logo} alt="Logo" class="img-fluid" style="height: 70px;" />
-      <a class="navbar-brand d-flex align-items-center mx-2" href="#">
-        <strong class="text-success ml-1">AFTAB</strong>
-        <span class="text-muted ml-1">AUTOS</span>
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+      <!-- Brand with Icon -->
+      <a class="navbar-brand" href="#">
+          <i class="fas fa-rocket"></i> Aftab Autos
       </a>
-    </div>
-  
-    <div class="ml-auto d-flex align-items-center">
-      <!-- Support Dropdown -->
-      <div class="dropdown">
-        <a href="#" class="nav-link d-flex align-items-center text-muted" id="userDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fa-sharp fa-solid fa-headset fa-lg mb-2 mx-1" style="font-size: 28px;"></i>
-          <span class="h6" style="font-weight: bolder;">SUPPORT</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-start" aria-labelledby="userDropdown1">
-          <a class="dropdown-item" href="#">+92 346 0861150</a>
-          <a class="dropdown-item" href="#">+92 335 1279228</a>
-          <div class="dropdown-divider"></div>
-          <div class="d-flex justify-content-center">
-            <button type="button" class="btn btn-success mx-1">Contact Us</button>
-          </div>
-        </div>
+
+      <!-- Toggler for Mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"><i class="fas fa-home"></i> Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#"><i class="fas fa-chart-line"></i> Dashboard</a>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="fas fa-cogs"></i> Setup
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-dark dropdown-menu-start" aria-labelledby="userDropdowns">
+                      <!-- Lists Section -->
+                      <div>
+                          <h6 class="dropdown-header text-light">Lists</h6>
+                          <a href="#/customer" class="dropdown-item text-light">
+                              <i class="fas fa-users me-2"></i>Customer
+                          </a>
+                          <a href="#/Vendor" class="dropdown-item text-light">
+                              <i class="fas fa-truck me-2"></i>Vendors
+                          </a>
+                          <a class="dropdown-item text-light" href="#/Products">
+                              <i class="fas fa-box-open me-2"></i>Products
+                          </a>
+                          <a class="dropdown-item text-light" href="#/User">
+                              <i class="fas fa-user me-2"></i>Users
+                          </a>
+                      </div>
+
+                      <!-- Categories Section -->
+                      <div>
+                          <h6 class="dropdown-header text-light">Categories</h6>
+                          <a class="dropdown-item text-light" href="#/customerCate">
+                              <i class="fas fa-user-tag me-2"></i>Customer Categories
+                          </a>
+                          <a class="dropdown-item text-light" href="#/vendorcate">
+                              <i class="fas fa-truck-moving me-2"></i>Vendor Categories
+                          </a>
+                          <a class="dropdown-item text-light" href="#/productcate">
+                              <i class="fas fa-boxes me-2"></i>Product Categories
+                          </a>
+                          <a class="dropdown-item text-light" href="#/brand">
+                              <i class="fas fa-tags me-2"></i>Brands
+                          </a>
+                      </div>
+
+                      <!-- General Section -->
+                      <div>
+                          <h6 class="dropdown-header text-light">General</h6>
+                          <a class="dropdown-item text-light" href="#/tax">
+                              <i class="fas fa-percent me-2"></i>Tax
+                          </a>
+                          <a class="dropdown-item text-light" href="#/discount">
+                              <i class="fas fa-tag me-2"></i>Discounts
+                          </a>
+                          <a class="dropdown-item text-light" href="#/warehouse">
+                              <i class="fas fa-warehouse me-2"></i>Warehouses
+                          </a>
+                          <a class="dropdown-item text-light" href="#/mpl">
+                              <i class="fas fa-layer-group me-2"></i>Multiple Price Levels
+                          </a>
+                      </div>
+
+                      <!-- Payroll Section -->
+                      <div>
+                          <h6 class="dropdown-header text-light">Payroll</h6>
+                          <a class="dropdown-item text-light" href="#/employ">
+                              <i class="fas fa-user-tie me-2"></i>Employees
+                          </a>
+                      </div>
+                  </div>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <i class="fas fa-plus"></i>  Create</a>
+                  <div class="dropdown-menu dropdown-menu-dark dropdown-menu-start" aria-labelledby="userDropdown2">
+                      <!-- Sale Quotation -->
+                      <a href="#/addQuotation" class="dropdown-item text-light">
+                          <i class="fas fa-file-invoice-dollar me-2"></i>Sale Quotation
+                      </a>
+
+                      <!-- Sale Invoice -->
+                      <a href="#/addsaleinvoice" class="dropdown-item text-light">
+                          <i class="fas fa-receipt me-2"></i>Sale Invoice
+                      </a>
+
+                      <!-- Receive Money -->
+                      <a href="#/addrecivemoney" class="dropdown-item text-light">
+                          <i class="fas fa-hand-holding-usd me-2"></i>Receive Money
+                      </a>
+
+                      <!-- Purchase Order -->
+                      <a href="#/addpurchaseorder" class="dropdown-item text-light">
+                          <i class="fas fa-file-alt me-2"></i>Purchase Order
+                      </a>
+
+                      <!-- Purchase Invoice -->
+                      <a class="dropdown-item text-light" href="#/addpurchaseinvoice">
+                          <i class="fas fa-file-invoice me-2"></i>Purchase Invoice
+                      </a>
+
+                      <!-- Make Payment -->
+                      <a class="dropdown-item text-light" href="#/addmakepaymet">
+                          <i class="fas fa-money-check-alt me-2"></i>Make Payment
+                      </a>
+
+                      <!-- Expense -->
+                      <a class="dropdown-item text-light" href="#/addexpance">
+                          <i class="fas fa-wallet me-2"></i>Expense
+                      </a>
+                  </div>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+              </li>
+          </ul>
       </div>
-  
-      <!-- Create Dropdown -->
-      <div class="dropdown">
-        <a href="#" class="nav-link d-flex align-items-center text-muted" id="userDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fa-sharp fa-solid fa-square-plus mx-1 mb-2" style="font-size: 28px;"></i>
-          <span class="h6" style="font-weight: bolder ;">CREATE</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-start" aria-labelledby="userDropdown2">
-          <a href="#/addQuotation" class="dropdown-item">Sale Quotation</a>
-          <a href="#/addsaleinvoice" class="dropdown-item">Sale Invoice</a>
-          <a href="#/addrecivemoney" class="dropdown-item">Receive Money</a>
-          <a href="#/addpurchaseorder" class="dropdown-item">Purchase Order</a>
-          <a class="dropdown-item" href="#/addpurchaseinvoice">Purchase Invoice</a>
-          <a class="dropdown-item" href="#/addmakepaymet">Make Payment</a>
-          <a class="dropdown-item" href="#/addexpance">Expense</a>
-        </div>
-      </div>
-  
-      <!-- Setup Dropdown -->
-      <div class="dropdown">
-        <a href="#" class="nav-link d-flex align-items-center text-muted" id="userDropdowns" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fa-sharp-duotone fa-solid fa-gear mx-1 mb-2" style="font-size: 28px;"></i>
-          <span class="h6" style="font-weight: bolder;">SETUP</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-start" aria-labelledby="userDropdowns">
-          <div>
-            <h6 class="dropdown-header">Lists</h6>
-            <a href="#/customer" class="dropdown-item">Customer</a>
-            <a href="#/Vendor" class="dropdown-item">Vendors</a>
-            <a class="dropdown-item" href="#/Products">Products</a>
-            <a class="dropdown-item" href="#/User">Users</a>
-          </div>
-          <div>
-            <h6 class="dropdown-header">Categories</h6>
-            <a class="dropdown-item" href="#/customerCate">Customer Categories</a>
-            <a class="dropdown-item" href="#/vendorcate">Vendor Categories</a>
-            <a class="dropdown-item" href="#/productcate">Product Categories</a>
-            <a class="dropdown-item" href="#/brand">Brands</a>
-          </div>
-          <div>
-            <h6 class="dropdown-header">General</h6>
-            <a class="dropdown-item" href="#/tax">Tax</a>
-            <a class="dropdown-item" href="#/discount">Discounts</a>
-            <a class="dropdown-item" href="#/warehouse">Warehouses</a>
-            <a class="dropdown-item" href="#/mpl">Multiple Price Levels</a>
-          </div>
-          <div>
-            <h6 class="dropdown-header">Payroll</h6>
-            <a class="dropdown-item" href="#/employ">Employees</a>
-          </div>
-        </div>
-      </div>
-  
-      <!-- User Dropdown -->
-      <div class="dropdown">
-        <a href="#" class="nav-link dropdown-toggle d-flex align-items-center text-muted" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="h6">AFTAB AUT...</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-            <a class="dropdown-item" href="#">User Profile</a>
-            <a class="dropdown-item" href="#">Change Password</a>
-            <a class="dropdown-item" href="#">Settings</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Logout</a>
-        </div>
-    </div>
-    </div>
-  </nav>
-  
-</div>
+  </div>
+</nav>
+
 
 <style>
-  .custom-bg-c {
-    background: #e7ebf1;
+  /* Navbar Styling */
+  .navbar {
+      background: #1a1a1a;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 10px 20px;
   }
 
-  
+  /* Brand Styling */
+  .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #fff !important;
+      display: flex;
+      align-items: center;
+  }
+  .navbar-brand i {
+      margin-right: 10px;
+  }
+
+  /* Nav Links Styling */
+  .navbar-nav .nav-link {
+      color: #fff !important;
+      font-size: 1rem;
+      margin: 0 10px;
+      padding: 8px 15px;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+  }
+  .navbar-nav .nav-link:hover {
+      background: #333;
+      color: #ffdd57 !important;
+  }
+
+  /* Dropdown Menu Styling */
+  .dropdown-menu {
+      background: #1a1a1a;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .dropdown-item {
+      color: #fff !important;
+      transition: all 0.3s ease;
+  }
+  .dropdown-item:hover {
+      background: #333;
+      color: #ffdd57 !important;
+  }
+
+  /* Toggler Icon Styling */
+  .navbar-toggler {
+      border: none;
+      color: #fff;
+  }
+  .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 991.98px) {
+      .navbar-nav {
+          margin-top: 10px;
+      }
+      .navbar-nav .nav-link {
+          margin: 5px 0;
+          padding: 10px 15px;
+      }
+  }
 </style>

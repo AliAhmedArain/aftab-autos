@@ -10,12 +10,20 @@
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^5.0.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.1",
     "svelte": "^5.2.7",
+    "tailwindcss": "^4.0.1",
     "vite": "^6.0.1"
   },
   "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-regular-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "axios": "^1.7.9",
     "bootstrap": "^5.3.3",
+    "shadcn-svelte": "^0.14.0",
+    "svelte-fontawesome": "^0.0.3",
     "svelte-spa-router": "^4.0.1"
   }
 }
