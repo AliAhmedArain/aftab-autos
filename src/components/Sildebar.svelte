@@ -1,124 +1,244 @@
 <script>
+    import { onMount } from 'svelte';
+    let collapsed = false;
+    let activeDropdown = null;
 
-    import Quotation from "./Quotation.svelte";
+    function toggleSidebar() {
+        collapsed = !collapsed;
+    }
 
+    function toggleDropdown(index) {
+        activeDropdown = activeDropdown === index ? null : index;
+    }
 </script>
 
-    <div class="d-none d-lg-flex">
-        <!-- Sidebar -->
-        <div class="custom-bg-c vh-100" style="width: 250px">
-                <!-- Logo and Title -->
-                <h4 class="d-flex mt-4 ml-3">
-                    <span class="me-2"></span> HOME
-                </h4>
-
-                <!-- Menu List -->
-                <ul class="nav flex-column mt-4">
-                    <!-- Dashboards -->
-                    <li class="nav-item mb-2 border-bottom">
-                        <a class="nav-link text-dark d-flex justify-content-between align-items-center"
-                           data-bs-toggle="collapse" href="#menu-dashboards">
-                            <span><i class="bi bi-calendar4-range mx-1"></i>Dashboard</span>
-                        </a>
-                    </li>
-
-                    <!-- Customers -->
-                    <li class="nav-item mb-2 border-bottom">
-                        <a class="nav-link text-dark d-flex justify-content-between align-items-center"
-                           data-bs-toggle="collapse" href="#menu-sales">
-                            <span><i class="bi bi-clipboard-data-fill mx-1"></i>SALES</span>
-                            <span class="fw-bold">+</span>
-                        </a>
-                        <div class="collapse" id="menu-sales">
-                            <ul class="nav flex-column ms-3 ml-4">
-                                <li><a href="#/quotation" class="nav-link text-dark">Quotation</a></li>
-                                <li><a href="#/invoice" class="nav-link text-dark">invoice</a></li>
-                                <li><a href="#/salereturn" class="nav-link text-dark">return</a></li>
-                                <li><a href="#/recivemoney" class="nav-link text-dark">receive money</a></li>
-                                <li><a href="#/refund" class="nav-link text-dark">refund</a></li>
-                            </ul>
-                        </div>
-                    </li>
-
-                    <!-- Projects -->
-                    <li class="nav-item mb-2 border-bottom">
-                        <a class="nav-link text-dark d-flex justify-content-between align-items-center"
-                           data-bs-toggle="collapse" href="#menu-PURCHASE">
-                            <span><i class="bi bi-bag-check-fill mx-1"></i>PURCHASE</span>
-                            <span class="fw-bold">+</span>
-                        </a>
-                        <div class="collapse" id="menu-PURCHASE">
-                            <ul class="nav flex-column ms-3 ml-4">
-                                <li><a href="#/purchaseorder" class="nav-link text-dark">order</a></li>
-                                <li><a href="#/purchaseinvoice" class="nav-link text-dark">invoice</a></li>
-                                <li><a href="#/purchasereturn" class="nav-link text-dark">return</a></li>
-                                <li><a href="#/purchasemakepayment" class="nav-link text-dark">make payment</a></li>
-                                <li><a href="#/purchaserefund" class="nav-link text-dark">refund</a></li>
-                            </ul>
-                        </div>
-                    </li>
-
-                    <!-- Account -->
-                    <li class="nav-item mb-2 border-bottom">
-                        <a class="nav-link text-dark d-flex justify-content-between align-items-center"
-                           data-bs-toggle="collapse" href="#menu-pos">
-                            <span><i class="bi bi-pc-display-horizontal mx-1"></i>POS</span>
-                            <span class="fw-bold">+</span>
-                        </a>
-                        <div class="collapse" id="menu-pos">
-                            <ul class="nav flex-column ms-3 ml-4">
-                                <li><a href="#/checkoutcounter" class="nav-link text-dark">Checkout counter</a>
-                                </li>
-                                <li><a href="#/poss" class="nav-link text-dark">pos</a></li>
-                            </ul>
-                        </div>
-                    </li>
-
-                    <!-- Add similar sections for Orders, Posts, Authentication -->
-                    <li class="nav-item mb-2 border-bottom">
-                        <a class="nav-link text-dark d-flex justify-content-between align-items-center"
-                           data-bs-toggle="collapse" href="#menu-account">
-                            <span><i class="bi bi-menu-button mx-1"></i>ACCOUNTS</span>
-                            <span class="fw-bold">+</span>
-                        </a>
-                        <div class="collapse" id="menu-account">
-                            <ul class="nav flex-column ms-3 ml-4">
-                                <li><a href="#/expanseaccount" class="nav-link text-dark">Expense</a></li>
-                            </ul>
-                        </div>
-                    </li>
-
-                    <li class="nav-item mb-2 border-bottom">
-                        <a class="nav-link text-dark d-flex justify-content-between align-items-center"
-                           data-bs-toggle="collapse" href="#menu-inventory">
-                            <span><i class="bi bi-bank mx-1"></i>INVENTORY</span>
-                            <span class="fw-bold">+</span>
-                        </a>
-                        <div class="collapse" id="menu-inventory">
-                            <ul class="nav flex-column ms-3 ml-4">
-                                <li><a href="#/stock-movement" class="nav-link text-dark">Stock Movement</a></li>
-                                <li><a href="#/stockadjustment" class="nav-link text-dark">stock adjustment</a>
-                                </li>
-                                <li><a href="#/stockvaluation" class="nav-link text-dark">Scheduled Valuation</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item mb-2 border-bottom">
-                        <a class="nav-link text-dark d-flex justify-content-between align-items-center"
-                           data-bs-toggle="collapse" href="#menu-reports">
-                            <span><i class="bi bi-file-earmark-person-fill mx-1"></i>REPORTS</span>
-                        </a>
-                    </li>
-                </ul>
+<!-- Sidebar -->
+<div id="sidebar" class:collapsed>
+    <!-- Sidebar Header -->
+    <div class="sidebar-header">
+        <div class="sidebar-brand">
+            <span class="sidebar-brand-text">MENU</span>
         </div>
-        <!-- <Quotation></Quotation> -->
-
-
-        
+        <button id="sidebarToggle" on:click={toggleSidebar}>
+            <i class="fas fa-bars"></i>
+        </button>
     </div>
 
+    <!-- Sidebar Links -->
+    <div class="sidebar-links">
+        <!-- Sales Dropdown -->
+        <div class="dropdown">
+            <button class="dropbtn" on:click={() => toggleDropdown(0)}>
+                <i class="fas fa-chart-line"></i>
+                <span class="sidebar-link-text">Sales</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            {#if activeDropdown === 0}
+                <div class="dropdown-content">
+                    <a href="#/quotation">Quotation</a>
+                    <a href="#">Orders</a>
+                    <a href="#">Invoices</a>
+                </div>
+            {/if}
+        </div>
+
+        <!-- Purchase Dropdown -->
+        <div class="dropdown">
+            <button class="dropbtn" on:click={() => toggleDropdown(1)}>
+                <i class="fas fa-shopping-cart"></i>
+                <span class="sidebar-link-text">Purchase</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            {#if activeDropdown === 1}
+                <div class="dropdown-content">
+                    <a href="#">Purchase Orders</a>
+                    <a href="#">Vendors</a>
+                    <a href="#">Receipts</a>
+                </div>
+            {/if}
+        </div>
+
+        <!-- POS Dropdown -->
+        <div class="dropdown">
+            <button class="dropbtn" on:click={() => toggleDropdown(2)}>
+                <i class="fas fa-cash-register"></i>
+                <span class="sidebar-link-text">POS</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            {#if activeDropdown === 2}
+                <div class="dropdown-content">
+                    <a href="#">POS Sales</a>
+                    <a href="#">Transactions</a>
+                    <a href="#">Returns</a>
+                </div>
+            {/if}
+        </div>
+
+        <!-- Accounts Dropdown -->
+        <div class="dropdown">
+            <button class="dropbtn" on:click={() => toggleDropdown(3)}>
+                <i class="fas fa-book"></i>
+                <span class="sidebar-link-text">Accounts</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            {#if activeDropdown === 3}
+                <div class="dropdown-content">
+                    <a href="#">General Ledger</a>
+                    <a href="#">Expenses</a>
+                    <a href="#">Payments</a>
+                </div>
+            {/if}
+        </div>
+
+        <!-- Inventory Dropdown -->
+        <div class="dropdown">
+            <button class="dropbtn" on:click={() => toggleDropdown(4)}>
+                <i class="fas fa-boxes"></i>
+                <span class="sidebar-link-text">Inventory</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            {#if activeDropdown === 4}
+                <div class="dropdown-content">
+                    <a href="#">Stock Management</a>
+                    <a href="#">Suppliers</a>
+                    <a href="#">Reports</a>
+                </div>
+            {/if}
+        </div>
+    </div>
+</div>
+
 <style>
-    .custom-bg-c {
-        background: #e7ebf1;
+    /* Sidebar Styling */
+    #sidebar {
+        width: 250px;
+        height: 100vh;
+        background: #1a1a1a;
+        color: #fff;
+        /* position: fixed; */
+        top: 65px;
+        left: 0;
+        transition: all 0.3s ease;
+        z-index: 1000;
+    }
+    #sidebar.collapsed {
+        width: 80px;
+    }
+    #sidebar.collapsed .sidebar-link-text {
+        display: none;
+    }
+    #sidebar.collapsed .sidebar-brand-text {
+        display: none;
+    }
+    #sidebar.collapsed .sidebar-header {
+        justify-content: center;
+    }
+
+    /* Sidebar Header */
+    .sidebar-header {
+        padding: 20px;
+        background: #111;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .sidebar-brand {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #fff;
+        display: flex;
+        align-items: center;
+    }
+    .sidebar-brand i {
+        margin-right: 10px;
+    }
+
+    /* Sidebar Links */
+    .sidebar-links {
+        padding: 20px 0;
+    }
+    .sidebar-link {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        color: #fff;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    .sidebar-link:hover {
+        background: #333;
+    }
+    .sidebar-link i {
+        margin-right: 10px;
+        font-size: 1.2rem;
+    }
+    .sidebar-link-text {
+        font-size: 1rem;
+    }
+
+    /* Dropdown Styling */
+    .dropdown {
+        margin-bottom: 10px;
+    }
+    .dropbtn {
+        background: none;
+        border: none;
+        color: #fff;
+        width: 100%;
+        text-align: left;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .dropbtn:hover {
+        background: #333;
+    }
+    .dropbtn i {
+        margin: 0 5px; /* Reduced gap */
+    }
+    .dropbtn .sidebar-link-text {
+        flex-grow: 1; /* Ensures text takes up remaining space */
+        margin: 0 10px; /* Adjust spacing */
+    }
+    .dropdown-content {
+        background: #2a2a2a;
+        margin-left: 20px;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    .dropdown-content a {
+        display: block;
+        padding: 10px 20px;
+        color: #fff;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    .dropdown-content a:hover {
+        background: #3a3a3a;
+    }
+
+    /* Toggle Button */
+    #sidebarToggle {
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 991px) {
+        #sidebar {
+            /* left: -250px; */
+
+            display: none;
+        }
+        #sidebar.collapsed {
+            left: 0;
+            width: 80px;
+        }
     }
 </style>
