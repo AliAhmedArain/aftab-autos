@@ -23,7 +23,7 @@
             </div>
         </div>
 
-        <!-- Desktop Table View -->
+
         <div class="table-responsive d-none d-md-block">
             <table class="table table-striped table-hover mt-3">
                 <thead class="table-light">
@@ -82,7 +82,7 @@
             </table>
         </div>
 
-        <!-- Mobile Card View -->
+    
         <div class="d-block d-md-none">
             <div class="card mb-3">
                 <div class="card-body">
@@ -112,10 +112,10 @@
                     </button>
                 </div>
             </div>
-            <!-- More cards for each item can be added here -->
+    
         </div>
 
-        <!-- Pagination -->
+
         <nav aria-label="Page navigation">
             <ul class="pagination justify-content-center mt-3">
                 <li class="page-item">
